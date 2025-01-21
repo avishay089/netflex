@@ -1,0 +1,54 @@
+/* Home.css */
+.homeScreen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color: black;
+    position: relative;
+  }
+  
+  .homeScreen__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/background.jpg");
+    z-index: -1;
+  }
+  
+  .homeScreen__content {
+    padding: 20px;
+    max-width: 650px;
+  }
+  
+  .homeScreen__form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .homeScreen__form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .homeScreen__button {
+    background-color: #e50914;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .homeScreen__button:hover {
+    background-color: #f40612;
+  }
+  
