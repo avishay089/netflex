@@ -33,8 +33,9 @@ function Login() {
         const data = await response.json()
         // Store the token in localStorage or in a state management solution
         localStorage.setItem("token", data.token)
+        localStorage.setItem("user_id", data.userId)
         // Redirect to the main page or dashboard
-        navigate("/dashboard")
+        navigate("/browse")
       } else {
         const errorData = await response.json()
         setLoginError(errorData.message || "Login failed. Please try again.")

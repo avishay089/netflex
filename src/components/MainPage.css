@@ -1,0 +1,30 @@
+.main-page {
+    background-color: #141414;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .categories-container {
+    padding: 20px 4%;
+  }
+  
+  .category-section {
+    margin-bottom: 40px;
+  }
+  
+  .loading,
+  .error {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #141414;
+  }
+  
+  .error {
+    color: #e50914;
+  }
+  
+  
