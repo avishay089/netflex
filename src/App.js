@@ -7,6 +7,7 @@ import MainPage from "./components/MainPage"
 import CategoryPage from "./components/CategoryPage"
 import MyListPage from "./components/MyListPage"
 import "bootstrap-icons/font/bootstrap-icons.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 
 function App() {

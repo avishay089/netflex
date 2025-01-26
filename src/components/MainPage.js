@@ -12,6 +12,7 @@ function MainPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -68,6 +69,7 @@ function MainPage() {
   }, [navigate])
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie)
+    setShowModal(true)
   }
   if (loading) {
     return <div className="loading">Loading...</div>
@@ -108,7 +110,7 @@ function MainPage() {
           </div>
         ))}
       </div>
-      {selectedMovie && <MovieModal movie={selectedMovie} onClose={() => setSelectedMovie(null)} />}
+      <MovieModal movie={selectedMovie} show={showModal} onHide={() => setShowModal(false)} />
     </div>
   )
 }
