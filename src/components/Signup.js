@@ -14,6 +14,7 @@ function Signup() {
     userName: "",
     phone: "",
     profilePicture: null,
+    isAdmin: false,
   })
   const [previewImage, setPreviewImage] = useState(null)
   const [passwordError, setPasswordError] = useState("")
@@ -27,10 +28,10 @@ function Signup() {
   }, [location.state?.email])
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const { name, value, type } = e.target
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === "checkbox" ? e.target.checked : value,
     }))
 
     if (name === "passwordVerify" || name === "password") {
@@ -100,10 +101,11 @@ function Signup() {
           tz: formData.id,
           password: formData.password,
           username: formData.userName,
+          isAdmin: formData.isAdmin,
           // Note: You might need to handle profile picture upload separately
         }),
       })
-      console.log(response);
+
       if (response.ok) {
         // Signup successful, redirect to login page
         navigate("/login", { state: { message: "Signup successful. Please log in." } })
@@ -246,7 +248,24 @@ function Signup() {
                         />
                       </div>
                     </div>
-                    <button type="submit" className="btn btn-danger btn-lg w-100 mb-3" disabled={!!passwordError}>
+                    <div className="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        className="form-check-input"
+                        id="isAdmin"
+                        name="isAdmin"
+                        checked={formData.isAdmin}
+                        onChange={handleInputChange}
+                      />
+                      <label className="form-check-label" htmlFor="isAdmin">
+                        Sign up as Admin
+                      </label>
+                    </div>
+                    <button
+                      type="submit"
+                      className="btn btn-danger btn-lg w-100 mb-3"
+                      disabled={!!passwordError || !!idError}
+                    >
                       Sign Up
                     </button>
                     <div className="text-white-50">

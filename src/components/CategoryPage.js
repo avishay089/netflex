@@ -3,12 +3,15 @@ import { useParams, useNavigate } from "react-router-dom"
 import Navigation from "./Navigation"
 import FeaturedMovie from "./FeaturedMovie"
 import MovieCarousel from "./MovieCarousel"
+import MovieModal from "./MovieModal"
 import "./CategoryPage.css"
 
 function CategoryPage() {
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedMovie, setSelectedMovie] = useState(null)
+  const [showModal, setShowModal] = useState(false)
   const { category } = useParams()
   const navigate = useNavigate()
 
@@ -51,6 +54,11 @@ function CategoryPage() {
     fetchMovies()
   }, [category, navigate])
 
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie)
+    setShowModal(true)
+  }
+
   if (loading) {
     return <div className="loading">Loading...</div>
   }
@@ -70,8 +78,9 @@ function CategoryPage() {
 
       <div className="movies-container">
         <h1 className="category-header">{category} Movies</h1>
-        <MovieCarousel title="All Movies" movies={movies} />
+        <MovieCarousel title="All Movies" movies={movies} onMovieClick={handleMovieClick} />
       </div>
+      <MovieModal movie={selectedMovie} show={showModal} onHide={() => setShowModal(false)} />
     </div>
   )
 }

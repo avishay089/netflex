@@ -30,7 +30,6 @@ function Navigation() {
 
         if (response.ok) {
           const data = await response.json()
-          console.log("Categories:", data)
           setCategories(Array.isArray(data) ? data : [])
         }
       } catch (error) {
@@ -92,7 +91,7 @@ function Navigation() {
 
   const handleSearchClose = () => {
     setShowSearch(false)
-    setSearchQuery("")
+    setSearchQuery(" ")
     setSearchResults([])
   }
   const toggleCategories = () => {
@@ -136,6 +135,11 @@ function Navigation() {
           <Link to="/my-list" className="nav-link">
             My List
           </Link>
+          {localStorage.getItem("isAdmin") === "true" && (
+            <Link to="/admin" className="nav-link">
+              Admin
+            </Link>
+          )}
         </div>
       </div>
 

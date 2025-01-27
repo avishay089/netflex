@@ -34,6 +34,7 @@ function Login() {
         // Store the token in localStorage or in a state management solution
         localStorage.setItem("token", data.token)
         localStorage.setItem("user_id", data.userId)
+        localStorage.setItem("isAdmin", data.isAdmin)
         // Redirect to the main page or dashboard
         navigate("/browse")
       } else {

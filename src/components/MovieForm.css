@@ -1,0 +1,73 @@
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.movie-form input {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+
+.movie-form input:focus {
+  outline: none;
+  background-color: #404040;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.primary-button {
+  padding: 12px 24px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.primary-button:hover {
+  background-color: #f40612;
+}
+
+.delete-button {
+  padding: 12px 24px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.delete-button:hover {
+  background-color: #404040;
+}
+
+.cancel-button {
+  padding: 12px 24px;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cancel-button:hover {
+  background-color: #777;
+}
+
+.movie-form-container h3 {
+  margin-bottom: 20px;
+  color: white;
+}
+

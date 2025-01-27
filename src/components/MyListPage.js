@@ -1,14 +1,17 @@
-import React, { useState, useEffect, use } from "react"
+import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Navigation from "./Navigation"
 import FeaturedMovie from "./FeaturedMovie"
 import MovieCarousel from "./MovieCarousel"
+import MovieModal from "./MovieModal"
 import "./MyListPage.css"
 
 function MyListPage() {
   const [watchedMovies, setWatchedMovies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedMovie, setSelectedMovie] = useState(null)
+  const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -64,6 +67,11 @@ function MyListPage() {
     fetchWatchedMovies()
   }, [navigate])
 
+  const handleMovieClick = (movie) => {
+    setSelectedMovie(movie)
+    setShowModal(true)
+  }
+
   if (loading) {
     return <div className="loading">Loading...</div>
   }
@@ -84,13 +92,14 @@ function MyListPage() {
       <div className="movies-container">
         <h1 className="page-header">My List</h1>
         {watchedMovies.length > 0 ? (
-          <MovieCarousel title="Watched Movies" movies={watchedMovies} />
+          <MovieCarousel title="Watched Movies" movies={watchedMovies} onMovieClick={handleMovieClick} />
         ) : (
           <div className="no-movies">
             <p>You haven't watched any movies yet. Start exploring!</p>
           </div>
         )}
       </div>
+      <MovieModal movie={selectedMovie} show={showModal} onHide={() => setShowModal(false)} />
     </div>
   )
 }

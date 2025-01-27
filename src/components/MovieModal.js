@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { Modal, Button, Row, Col } from "react-bootstrap"
 import { Play } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 import MovieCarousel from "./MovieCarousel"
 import "./MovieModal.css"
 
 function MovieModal({ movie, show, onHide }) {
   const [similarMovies, setSimilarMovies] = useState([])
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchSimilarMovies = async () => {
@@ -60,6 +62,11 @@ function MovieModal({ movie, show, onHide }) {
     }
   }, [movie, show])
 
+  const handlePlay = () => {
+    onHide()
+    navigate(`/movie/${movie._id}`)
+  }
+
   if (!movie) return null
 
   return (
@@ -71,7 +78,7 @@ function MovieModal({ movie, show, onHide }) {
         <div className="movie-modal-content">
           <div className="movie-hero mb-4">
             <img
-              src="https://occ-0-5095-2774.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfNLhB5R6EWSDcKOW4Z8EWmCFN8Cgd30pFcUs8DEuklzhAM4Obbv4qJMslWves17Uuah10sIovt71GmPcfTw7c-hJC9NDjbKFp0.webp?r=dd4"
+              src={movie.imageUrl || "https://occ-0-5095-2774.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfNLhB5R6EWSDcKOW4Z8EWmCFN8Cgd30pFcUs8DEuklzhAM4Obbv4qJMslWves17Uuah10sIovt71GmPcfTw7c-hJC9NDjbKFp0.webp?r=dd4"}
               alt={movie.name}
               className="img-fluid w-100"
               style={{ height: "400px", objectFit: "cover" }}
@@ -86,7 +93,7 @@ function MovieModal({ movie, show, onHide }) {
                 <span>Rating: {movie.rating}</span>
               </div>
               <div className="movie-buttons">
-                <Button variant="light" className="me-2">
+                <Button variant="light" className="me-2" onClick={handlePlay}>
                   <Play size={20} /> Play
                 </Button>
               </div>
@@ -117,8 +124,8 @@ function MovieModal({ movie, show, onHide }) {
               <MovieCarousel
                 movies={similarMovies}
                 onMovieClick={(newMovie) => {
-                  window.history.pushState({}, "", `/browse/${newMovie._id}`)
-                  // You might want to implement a callback to the parent to update the current movie
+                  onHide()
+                  navigate(`/movie/${newMovie._id}`)
                 }}
               />
             </div>
