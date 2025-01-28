@@ -1,0 +1,26 @@
+FROM gcc:latest
+
+# Install cmake and other dependencies
+RUN apt-get update && apt-get install -y cmake
+
+# Copy the src directory contents into the container at /usr/src/my_project
+COPY src /usr/src/my_project
+
+# Copy the data directory contents into the container at /usr/src/my_project/data
+COPY data /usr/src/my_project/data
+
+# Set the working directory to /usr/src/my_project
+WORKDIR /usr/src/my_project
+
+# Create build directory and set it as the working directory
+RUN mkdir build
+WORKDIR /usr/src/my_project/build
+
+# Run cmake and make
+RUN cmake .. && make
+
+#EXPOSE 8080
+EXPOSE 8080
+
+# Run the application
+CMD ["./server.exe"]

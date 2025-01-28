@@ -1,0 +1,24 @@
+.admin-movie-manager {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.manager-content {
+  display: flex;
+  gap: 20px;
+}
+
+.movie-search {
+  flex: 1;
+  position: relative;
+}
+
+.movie-form-container {
+  flex: 1;
+  background-color: #242424;
+  padding: 20px;
+  border-radius: 4px;
+}
+
