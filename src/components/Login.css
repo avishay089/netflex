@@ -1,0 +1,32 @@
+.card {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+  }
+  
+  .form-control {
+    background-color: #333 !important;
+    border: none;
+    color: white !important;
+  }
+  
+  .form-control:focus {
+    background-color: #454545 !important;
+    color: white !important;
+    box-shadow: none;
+    border-color: #454545;
+  }
+  
+  .form-control::placeholder {
+    color: #8c8c8c;
+  }
+  
+  .form-check-input {
+    background-color: #333;
+    border-color: #454545;
+  }
+  
+  .form-check-input:checked {
+    background-color: #e50914;
+    border-color: #e50914;
+  }
+  
+  

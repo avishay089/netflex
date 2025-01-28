@@ -1,0 +1,125 @@
+זה לתרגיל הבא כשיהיה בדיקה
+curl -i -X POST http://localhost:3000/api/movies \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer f16fb421ce66b369c438d7fed9d04497" \
+-d '{"name": "try", "category": "Drama", "starring": ["Brad Pitt", "Angelinna Joly"], "rating" : 8, "duration" : 119}'
+זה לתרגיל עכשיו שזה רק להחזיר את המזהה
+curl -i -X POST http://localhost:3000/api/movies \
+-H "Content-Type: application/json" \
+-H "userid: f16fb421ce66b369c438d7fed9d04497" \
+-d '{"name": "die hard2", "category": "Drama", "starring": ["Brad Pitt", "Angelinna Joly"], "rating" : 8, "duration" : 119}'
+
+curl -i http://localhost:3000/api/movies \
+-H "user_id: 6791191634139942bfcccb58"
+
+curl -i -X PUT http://localhost:3000/api/movies/6791263034139942bfcccbb0 \
+-H "Content-Type: application/json" \
+-H "user_id: 6791191634139942bfcccb58" \
+-d '{"name": "Get Out", "category": "Horror", "starring": ["Daniel Kaluuya", "Allison Williams"], "rating": 4.7, "duration": 104}'
+
+curl -i -X DELETE http://localhost:3000/api/movies/679129b234139942bfcccc19 \
+-H "user_id: 6791191634139942bfcccb58" 
+curl -i -X DELETE http://localhost:3000/api/categories/67766cac33ce161da8db416f
+
+curl -i -X POST http://localhost:3000/api/tokens \
+-H "Content-Type: application/json" \
+-d '{
+  "username": "halel6",
+  "password": "strongPassword123"
+}'
+
+curl -i -X POST http://localhost:3000/api/users \
+-H "Content-Type: application/json" \
+-d '{
+  "tz": "1234541210",
+  "password": "strongPassword123",
+  "name": "halel",
+  "email": "halel@example.com",
+  "username": "halel6",
+  "paymentMethod": "1234567890123456"
+}'
+curl -i -X POST http://localhost:3000/api/users \
+-H "Content-Type: application/json" \
+-d '{
+  "tz": "1234541210",
+  "password": "strongPassword123",
+  "name": "halel",
+  "email": "halel@example.com",
+  "username": "halel6",
+  "paymentMethod": "1234567890123456"
+}'
+
+curl -i -X POST http://localhost:3000/api/users \
+-H "Content-Type: application/json" \
+-d '{
+  "tz": "9876155210",
+  "password": "strongPassword123",
+  "name": "roni",
+  "email": "roni@example.com",
+  "username": "roni",
+  "paymentMethod": "1234567890123456"
+}'
+
+677b977cfc27a33d542db0e1
+
+curl -i -X POST http://localhost:3000/api/movies/6791022a720d23600b63489f/recommend \
+-H "Content-Type: application/json" \
+-H "user_id: 6791191634139942bfcccb58" 
+
+
+curl -i -X PATCH \
+http://localhost:3000/api/categories/67911d8434139942bfcccb6a \
+-H "Content-Type: application/json" \
+-H "user_id: 6791191634139942bfcccb58" \
+-d '{"name": "Comedy2", "promoted": true}'
+
+curl -i -X PATCH \
+http://localhost:3000/api/categories/6790fe11924b26d6e295fec4 \
+-H "Content-Type: application/json" \
+-d '{"name": "Action & Adventure"}'
+
+curl -i http://localhost:3000/api/movies/6791254034139942bfcccb89 \
+-H "user_id: 6791191634139942bfcccb58"
+
+curl -i -X POST http://localhost:3000/api/categories \
+-H "Content-Type: application/json" \
+-H "user_id: 6791191634139942bfcccb58" \
+-d '{"name": "Comedy", "promoted": false}'
+curl -i -X POST http://localhost:3000/api/categories \
+-H "Content-Type: application/json" \
+-H "user_id: 6791191634139942bfcccb58" \
+-d '{"name": "Documentary", "promoted": false}'
+curl -i -X POST http://localhost:3000/api/categories \
+-H "Content-Type: application/json" \
+-H "user_id: 6791191634139942bfcccb58" \
+-d '{"name": "Horror", "promoted": false}'
+
+curl -i -X DELETE \
+http://localhost:3000/api/categories/679128dc34139942bfcccc10 \
+-H "user_id: 6791191634139942bfcccb58"
+
+67911dbe34139942bfcccb6e
+
+curl -i -X POST http://localhost:3000/api/movies \
+-H "Content-Type: application/json" \
+-H "userid: 6791191634139942bfcccb58" \
+-d '{"name": "die hard2", "category": "Drama", "starring": ["Brad Pitt", "Angelinna Joly"], "rating" : 8, "duration" : 119}'
+
+
+
+curl -i -X POST http://localhost:3000/api/movies \
+-H "Content-Type: application/json" \
+-H "userid: 6791191634139942bfcccb58" \
+-d '{"name": "12 Years a Slave", "category": "Drama", "starring": ["Chiwetel Ejiofor", "Lupita Nyongo"], "rating": 8.1, "duration": 134}'
+
+
+curl -i -x http://localhost:3000/api/movies/6791283834139942bfcccbf4/recommend -H "user_id:6791191634139942bfcccb58" -H "port_num: 8080" -H "host_name: localhost"
+
+
+
+curl -i -X GET http://localhost:3000/api/movies/6791283834139942bfcccbee/recommend \
+-H "Content-Type: application/json" \
+-H "user_id: 6791190834139942bfcccb53" 
+
+
+curl -X GET "http://localhost:3000/api/movies/search/tit" -H "user_id: 6791190834139942bfcccb53"
