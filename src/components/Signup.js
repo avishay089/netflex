@@ -53,8 +53,8 @@ function Signup() {
   }
 
   const validatePassword = (password, passwordVerify) => {
-    if (password.length < 6) {
-      setPasswordError("Password must be at least 6 characters long")
+    if (password.length < 7) {
+      setPasswordError("Password must be at least 8 characters long")
     } else if (passwordVerify && password !== passwordVerify) {
       setPasswordError("Passwords do not match")
     } else {
@@ -103,6 +103,8 @@ function Signup() {
           username: formData.userName,
           isAdmin: formData.isAdmin,
           // Note: You might need to handle profile picture upload separately
+          // based on your API implementation
+          profilePicture : formData.profilePicture,
         }),
       })
 
@@ -131,7 +133,7 @@ function Signup() {
       <div className="content-wrapper">
         <header className="p-4">
           <Link to="/" className="text-danger text-decoration-none">
-            <div className="fs-1 fw-bold">NETFLIX</div>
+            <div className="fs-1 fw-bold">NETFLEX</div>
           </Link>
         </header>
         <div className="container">
