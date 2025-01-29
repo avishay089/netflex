@@ -11,6 +11,9 @@ const createMovie = async (req, res) => {
         if (!req.body.category) {
             return res.status(400).json({ error: ['Category is required'] });
         }
+        if (!req.body.videoUrl) { 
+            req.body.videoUrl = `http://localhost:5000/${req.body.name}.mp4`;
+        }
         const movieId = await getNextMovieId();
         req.body.int_Id = movieId;
         const movie = await movieService.createMovie(req.body);

@@ -13,7 +13,7 @@ function SearchResults({ results, onClose }) {
     <div className="search-results">
       <div className="search-results-content">
         {results.map((movie) => (
-          <div key={movie._id} className="search-result-item" onClick={() => navigate(`/movie/${movie._id}`)}>
+          <div key={movie._id} className="search-result-item" onClick={() => {               console.log(`Navigating to /movies/${movie._id}`); navigate(`/movies/${movie._id}`)}}>
             <img src="https://occ-0-5095-2774.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfNLhB5R6EWSDcKOW4Z8EWmCFN8Cgd30pFcUs8DEuklzhAM4Obbv4qJMslWves17Uuah10sIovt71GmPcfTw7c-hJC9NDjbKFp0.webp?r=dd4" alt={movie.name} className="search-result-image" />
             <div className="search-result-info">
               <h3 className="search-result-title">{movie.name}</h3>

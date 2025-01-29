@@ -38,6 +38,10 @@ const MovieSchema = new Schema({
     },
     imageUrl: {
         type: String // URL of the movie poster
+    },
+
+videoUrl: {
+    type: String // URL of the video
     }
 });
 
