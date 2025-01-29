@@ -12,6 +12,17 @@
   height: 68px;
 }
 
+
+.netflix-nav.dark {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+}
+
+.netflix-nav.light {
+  background: white;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .nav-left {
   display: flex;
   align-items: center;
@@ -40,12 +51,22 @@
   border: none;
   padding: 0;
 }
+.netflix-nav.dark .nav-link {
+  color: #e5e5e5;
+}
 
+.netflix-nav.light .nav-link {
+  color: #333;
+}
 .nav-link:hover,
 .nav-link.active {
   color: white;
 }
 
+.netflix-nav.light .nav-link:hover,
+.netflix-nav.light .nav-link.active {
+  color: #e50914;
+}
 .dropdown {
   position: relative;
 }
@@ -82,6 +103,15 @@
   margin-top: 0.5rem;
 }
 
+.netflix-nav.dark .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.netflix-nav.light .dropdown-menu {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .dropdown-menu.show {
   display: block;
 }
@@ -98,11 +128,20 @@
   cursor: pointer;
 }
 
+.netflix-nav.dark .dropdown-item {
+  color: #e5e5e5;
+}
+
+.netflix-nav.light .dropdown-item {
+  color: #333;
+}
 .dropdown-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
-
+.netflix-nav.light .dropdown-item:hover {
+  background-color: #f8f9fa;
+}
 .nav-right {
   display: flex;
   align-items: center;
@@ -140,7 +179,16 @@
   border-radius: 4px;
   z-index: 1001; /* Ensure input stays above results */
 }
+.netflix-nav.dark .search-input {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+}
 
+.netflix-nav.light .search-input {
+  background: white;
+  color: #333;
+  border-color: #ddd;
+}
 .search-container.active .search-input {
   width: 250px;
 }
@@ -152,7 +200,13 @@
   cursor: pointer;
   padding: 8px;
 }
+.netflix-nav.dark .search-button {
+  color: white;
+}
 
+.netflix-nav.light .search-button {
+  color: #333;
+}
 .search-button:hover {
   color: #e5e5e5;
 }
@@ -173,9 +227,36 @@
   padding: 0.5rem 1rem;
   color: #e5e5e5;
 }
+.netflix-nav.dark .dropdown-item-text {
+  color: #e5e5e5;
+}
 
+.netflix-nav.light .dropdown-item-text {
+  color: #333;
+}
 .dropdown-divider {
   border-color: rgba(255, 255, 255, 0.1);
   margin: 0.5rem 0;
 }
+
+.netflix-nav.dark .dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.netflix-nav.light .dropdown-divider {
+  border-color: #e9ecef;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: inherit;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
 
