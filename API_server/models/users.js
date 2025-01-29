@@ -40,7 +40,7 @@ const UserSchema = new Schema({
     },
     profilePicture: { // תמונה
         type: String,
-        default:  "https://via.placeholder.com/150"
+        default:  "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
     },
     releaseDate: { // תאריך רישום
         type: Date,

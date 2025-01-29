@@ -35,6 +35,8 @@ function Login() {
         localStorage.setItem("token", data.token)
         localStorage.setItem("user_id", data.userId)
         localStorage.setItem("isAdmin", data.isAdmin)
+        localStorage.setItem("userImage", data.profilePicture)
+        localStorage.setItem("userName", data.userName)
         // Redirect to the main page or dashboard
         navigate("/browse")
       } else {
@@ -61,7 +63,7 @@ function Login() {
       <div className="position-relative">
         <header className="p-4">
           <Link to="/" className="text-danger text-decoration-none">
-            <div className="fs-1 fw-bold">NETFLIX</div>
+            <div className="fs-1 fw-bold">NETFLEX</div>
           </Link>
         </header>
 

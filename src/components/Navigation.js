@@ -14,7 +14,7 @@ function Navigation() {
   const navigate = useNavigate()
 
   const userName = localStorage.getItem("userName") || "User"
-  const userImage = localStorage.getItem("userImage") || "/userImage.webp"
+  const userImage = localStorage.getItem("userImage") || "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -102,7 +102,7 @@ function Navigation() {
     <nav className="netflix-nav">
       <div className="nav-left">
         <Link to="/" className="netflix-logo">
-          NETFLIX
+          NETFLEX
         </Link>
         <div className="nav-links">
           <Link to="/browse" className="nav-link active">
@@ -144,7 +144,7 @@ function Navigation() {
       </div>
 
       <div className="nav-right">
-      <div className={`search-container ${showSearch ? "active" : ""}`}>
+        <div className={`search-container ${showSearch ? "active" : ""}`}>
           <button className="search-button" onClick={() => setShowSearch(!showSearch)}>
             <i className="bi bi-search"></i>
           </button>

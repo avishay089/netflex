@@ -16,7 +16,7 @@ exports.login = async (req, res) => {
         const token = generateToken(); // יוצר טוקן חדש למשתמש
         await Token.create({ userID: user._id, token }); // שמירת הטוקן במסד הנתונים
 
-        res.status(201).json({ userId: user._id, token: token, isAdmin: user.isAdmin}); // מחזיר את מזהה המשתמש והטוקן בתשובה
+        res.status(201).json({ userId: user._id, token: token, isAdmin: user.isAdmin, profilePicture: user.profilePicture, userName: user.username}); // מחזיר את מזהה המשתמש והטוקן בתשובה
     } catch (error) {
         res.status(400).json({ error: error.message }); // מטפל בשגיאות בלתי צפויות
     }
