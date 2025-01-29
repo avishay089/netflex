@@ -23,7 +23,7 @@ function App() {
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/my-list" element={<MyListPage />} />
         <Route path="/admin" element={<AdminPage />} />
-        <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/movies/:id" element={<MoviePage />} />
       </Routes>
     </Router>
   );
