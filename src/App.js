@@ -6,6 +6,7 @@ import Signup from "./components/Signup"
 import MainPage from "./components/MainPage"
 import MyListPage from "./components/MyListPage"
 import CategoryPage from "./components/CategoryPage"
+import { ThemeProvider } from "./contexts/ThemeContext"
 import AdminPage from "./components/AdminPage"
 import MoviePage from "./components/MoviePage"
 import "bootstrap-icons/font/bootstrap-icons.css"
@@ -14,6 +15,7 @@ import './App.css';
 
 function App() {
   return (
+
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,6 +28,7 @@ function App() {
         <Route path="/movies/:id" element={<MoviePage />} />
       </Routes>
     </Router>
+
   );
 }
 

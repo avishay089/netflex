@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { useTheme } from "../contexts/ThemeContext"
 import Navigation from "./Navigation"
 import FeaturedMovie from "./FeaturedMovie"
 import MovieCarousel from "./MovieCarousel"
@@ -14,6 +15,8 @@ function MainPage() {
   const [selectedMovie, setSelectedMovie] = useState(null)
   const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
+  const { isDarkMode } = useTheme()
+
 
   useEffect(() => {
     const fetchAllMovies = async () => {
@@ -90,8 +93,8 @@ function MainPage() {
   const randomMovie = allMovies[Math.floor(Math.random() * allMovies.length)]
 
   return (
-    <div className="main-page">
-      <Navigation />
+    <div className={`main-page ${isDarkMode ? "dark" : "light"}`}>
+            <Navigation />
 
       {randomMovie && <FeaturedMovie movie={randomMovie} onPlay={() => handleMovieClick(randomMovie)} />}
 
