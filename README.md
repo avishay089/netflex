@@ -50,5 +50,5 @@ recommend
 
 
 try to see a movie from a link whithout login
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](images/image-24.png)
+![alt text](images/image-25.png)
