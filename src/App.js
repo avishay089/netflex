@@ -15,20 +15,20 @@ import './App.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/browse" element={<MainPage />} />
-          <Route path="/category/:category" element={<CategoryPage />} />
-          <Route path="/my-list" element={<MyListPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/movie/:id" element={<MoviePage />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/browse" element={<MainPage />} />
+        <Route path="/category/:category" element={<CategoryPage />} />
+        <Route path="/my-list" element={<MyListPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/movies/:id" element={<MoviePage />} />
+      </Routes>
+    </Router>
+
   );
 }
 
