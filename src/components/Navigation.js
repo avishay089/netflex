@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { Sun, Moon } from "lucide-react"
+import { useTheme } from "../contexts/ThemeContext"
 import "./Navigation.css"
 import SearchResults from "./SearchResults"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -12,6 +14,7 @@ function Navigation() {
   const [showCategories, setShowCategories] = useState(false)
   const [isSearching, setIsSearching] = useState(false)
   const navigate = useNavigate()
+  const { isDarkMode, toggleTheme } = useTheme()
 
   const userName = localStorage.getItem("userName") || "User"
   const userImage = localStorage.getItem("userImage") || "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
@@ -99,51 +102,54 @@ function Navigation() {
   }
 
   return (
-    <nav className="netflix-nav">
-      <div className="nav-left">
-        <Link to="/" className="netflix-logo">
-          NETFLEX
+
+    <nav className={`netflix-nav ${isDarkMode ? "dark" : "light"}`}>      <div className="nav-left">
+      <Link to="/" className="netflix-logo">
+        NETFLEX
+      </Link>
+      <div className="nav-links">
+        <Link to="/browse" className="nav-link active">
+          Home
         </Link>
-        <div className="nav-links">
-          <Link to="/browse" className="nav-link active">
-            Home
-          </Link>
-          <div className="dropdown">
-            <button className="nav-link dropdown-toggle" onClick={toggleCategories} aria-expanded={showCategories}>
-              Categories
-            </button>
-            <ul className={`dropdown-menu ${showCategories ? "show" : ""}`}>
-              {categories && categories.length > 0 ? (
-                categories.map((category) => (
-                  <li key={category._id}>
-                    <Link
-                      to={`/category/${category.name}`}
-                      className="dropdown-item"
-                      onClick={() => setShowCategories(false)}
-                    >
-                      {category.name}
-                    </Link>
-                  </li>
-                ))
-              ) : (
-                <li>
-                  <span className="dropdown-item">No categories available</span>
+        <div className="dropdown">
+          <button className="nav-link dropdown-toggle" onClick={toggleCategories} aria-expanded={showCategories}>
+            Categories
+          </button>
+          <ul className={`dropdown-menu ${showCategories ? "show" : ""}`}>
+            {categories && categories.length > 0 ? (
+              categories.map((category) => (
+                <li key={category._id}>
+                  <Link
+                    to={`/category/${category.name}`}
+                    className="dropdown-item"
+                    onClick={() => setShowCategories(false)}
+                  >
+                    {category.name}
+                  </Link>
                 </li>
-              )}
-            </ul>
-          </div>
-          <Link to="/my-list" className="nav-link">
-            My List
-          </Link>
-          {localStorage.getItem("isAdmin") === "true" && (
-            <Link to="/admin" className="nav-link">
-              Admin
-            </Link>
-          )}
+              ))
+            ) : (
+              <li>
+                <span className="dropdown-item">No categories available</span>
+              </li>
+            )}
+          </ul>
         </div>
+        <Link to="/my-list" className="nav-link">
+          My List
+        </Link>
+        {localStorage.getItem("isAdmin") === "true" && (
+          <Link to="/admin" className="nav-link">
+            Admin
+          </Link>
+        )}
       </div>
+    </div>
 
       <div className="nav-right">
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
         <div className={`search-container ${showSearch ? "active" : ""}`}>
           <button className="search-button" onClick={() => setShowSearch(!showSearch)}>
             <i className="bi bi-search"></i>
