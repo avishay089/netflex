@@ -1,53 +1,38 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
-
-.video-frame {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  overflow: hidden;
+.App {
+  text-align: center;
 }
 
-.fullscreen-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.movie-info-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(30, 30, 47, 0.9);
-  padding: 20px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
-  font-family: 'Raleway', sans-serif;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.6);
 }
 
-.movie-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #ff616f;
-  margin-bottom: 10px;
+.App-link {
+  color: #61dafb;
 }
 
-.movie-category, .movie-rating, .movie-starring {
-  font-size: 18px;
-  margin: 8px 0;
-  color: #f0f0f0;
-}
-
-.movie-rating {
-  font-family: 'Roboto Mono', monospace;
-  background: #ff616f;
-  padding: 6px 12px;
-  border-radius: 8px;
-  display: inline-block;
-  color: #ffffff;
-  font-weight: 700;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

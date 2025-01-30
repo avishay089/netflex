@@ -1,80 +1,70 @@
-/* MoviePage.css */
-.movie-page {
-  font-family: 'Arial', sans-serif;
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  max-width: 100%;
-  margin: 0 auto;
+.movie-modal-content {
+  color: white;
+}
+
+.movie-hero {
   position: relative;
 }
 
-.movie-banner {
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(50%);
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.movie-info {
+.movie-hero-overlay {
   position: absolute;
-  top: 20%;
-  left: 20px;
-  max-width: 700px;
-  transition: opacity 0.5s ease;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
 }
 
-.movie-info.hide-info {
-  opacity: 0;
+.movie-title-modal {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.movie-title {
-  font-size: 3em;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #fff;
+.movie-metadata {
+  font-size: 1rem;
 }
 
-.movie-description {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #ccc;
-  line-height: 1.6;
+.movie-buttons {
+  margin-top: 1rem;
 }
 
-.movie-media {
-  margin-bottom: 30px;
+.modal-content {
+  background-color: #181818;
 }
 
-.movie-video {
-  width: 100%;
-  border-radius: 8px;
+.modal-header {
+  border-bottom: 1px solid #2a2a2a;
 }
 
-.movie-details {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-top: 2px solid #444;
-  border-bottom: 2px solid #444;
+.modal-title {
+  color: white;
 }
 
-.movie-category, .movie-rating, .movie-duration {
-  font-size: 1.1em;
-  color: #ccc;
+.btn-close {
+  color: white;
+  opacity: 1;
 }
 
-.movie-starring {
-  font-size: 1.2em;
-  color: #fff;
-  font-weight: 600;
+.btn-close:hover {
+  color: #e5e5e5;
+  opacity: 1;
 }
 
-.loading {
-  color: #007bff;
-  font-style: italic;
-  font-size: 1.5em;
-  text-align: center;
+h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #999;
+}
+
+.modal-header .btn-close {
+  color: white;
+  opacity: 1;
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-header .btn-close:hover {
+  opacity: 0.75;
 }
