@@ -15,7 +15,7 @@ import './App.css';
 
 function App() {
   return (
-
+    <ThemeProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path="/movies/:id" element={<MoviePage />} />
       </Routes>
     </Router>
-
+    </ThemeProvider>
   );
 }
 

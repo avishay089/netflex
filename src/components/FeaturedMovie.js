@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Play, Info } from "lucide-react"
+import React, { useState, useRef } from "react"
+import { Play, Info, Volume2, VolumeX } from "lucide-react"
 import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import MovieModal from "./MovieModal"
@@ -7,6 +7,8 @@ import "./FeaturedMovie.css"
 
 function FeaturedMovie({ movie, onMovieClick }) {
   const [showModal, setShowModal] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef(null)
   const navigate = useNavigate()
   const handleMoreInfo = () => {
     if (onMovieClick) {
@@ -16,13 +18,27 @@ function FeaturedMovie({ movie, onMovieClick }) {
     }
   }
   const handlePlay = () => {
-    navigate(`/movie/${movie._id}`)
+    navigate(`/movies/${movie._id}`)
+  }
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted
+      setIsMuted(!isMuted)
+    }
   }
 
   return (
     <div className="featured-movie">
       <div className="featured-content">
-        <img src={movie.imageUrl || "https://occ-0-5095-2774.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfNLhB5R6EWSDcKOW4Z8EWmCFN8Cgd30pFcUs8DEuklzhAM4Obbv4qJMslWves17Uuah10sIovt71GmPcfTw7c-hJC9NDjbKFp0.webp?r=dd4"} alt={movie.name} className="featured-backdrop" />
+      {movie.videoUrl ? (
+          <video ref={videoRef} className="featured-backdrop" autoPlay muted loop playsInline>
+            <source src={movie.videoUrl} type="video/mp4" />
+          </video>
+        ) : (
+          <video ref={videoRef} className="featured-backdrop" autoPlay muted loop playsInline>
+            <source src={'http://localhost:5000/halel.mp4'} type="video/mp4" />
+          </video>
+        )}
         <div className="featured-details">
           <h1 className="featured-title">{movie.name}</h1>
           <div className="featured-info">
@@ -39,6 +55,11 @@ function FeaturedMovie({ movie, onMovieClick }) {
             <Button variant="secondary" className="info-button" onClick={handleMoreInfo}>
               <Info size={20} /> More Info
             </Button>
+            {movie.videoUrl && (
+              <Button variant="secondary" className="volume-button" onClick={toggleMute}>
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+              </Button>
+            )}
           </div>
         </div>
       </div>

@@ -64,7 +64,7 @@ function MovieModal({ movie, show, onHide }) {
 
   const handlePlay = () => {
     onHide()
-    navigate(`/movie/${movie._id}`)
+    navigate(`/movies/${movie._id}`)
   }
 
   if (!movie) return null
@@ -125,7 +125,7 @@ function MovieModal({ movie, show, onHide }) {
                 movies={similarMovies}
                 onMovieClick={(newMovie) => {
                   onHide()
-                  navigate(`/movie/${newMovie._id}`)
+                  navigate(`/movies/${newMovie._id}`)
                 }}
               />
             </div>

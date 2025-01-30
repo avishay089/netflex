@@ -17,12 +17,13 @@
 
 .movie-info-overlay {
   position: absolute;
-  top: 60%; /* הורדת הכיתוב מעט יותר למטה */
-  left: 0%;
-  transform: translate(-0%, -0%);
+  top: 70%; /* הורדת הכיתוב מעט יותר למטה */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* כיסוי כל הרוחב */
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
-  padding:50px;
+  padding: 20px;
   color: white;
   font-family: 'Raleway', sans-serif;
   display: flex;
@@ -38,30 +39,30 @@
   pointer-events: auto;
 }
 
-.movie-title {
-  font-size: 600px; /* Increased font size for the title */
+.movie-title-video {
+  font-size: 80px; /* Increased font size for the title */
   font-weight: 700;
   color: #e50914;
   margin: 8;
 }
 
-.movie-duration {
+.movie-duration-video {
   font-size: 18px; /* Font size for the duration */
   margin: 5px 0;
   color: #ffffff;
 }
 
-
-.movie-category, .movie-rating {
+.movie-category-video, .movie-rating-video {
   font-size: 21px;
   margin: 5px 0;
   color: #ffffff;
 }
 
-.movie-rating {
+.movie-rating-video {
   font-family: 'Roboto Mono', monospace;
   padding: 4px 8px;
   border-radius: 4px;
   color: #ffffff;
   font-weight: 700;
+  border-bottom: 4px solid #e50914; /* פס אדום מתחת ל-rating */
 }
