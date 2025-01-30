@@ -30,7 +30,7 @@ const HomeScreen = () => {
             <div className="position-relative z-1">
                 {/* Header */}
                 <header className="d-flex justify-content-between align-items-center p-4">
-                    <div className="text-danger fs-1 fw-bold">NETFLIX</div>
+                    <div className="text-danger fs-1 fw-bold">NETFLEX</div>
                     <div className="d-flex gap-3">
                         <select className="form-select bg-transparent text-white border-white" style={{ width: "auto" }}>
                             <option value="en">English</option>
