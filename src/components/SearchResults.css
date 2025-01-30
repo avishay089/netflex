@@ -12,7 +12,7 @@
     z-index: 1000;
     transform: none; 
     max-width: calc(100vw - 2rem);
-    left: auto;
+    left: auto !important;
   }
   
   .search-results-content {
