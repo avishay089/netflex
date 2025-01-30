@@ -8,6 +8,13 @@ split terminal
 
 npm start
 
+run the recommend server from ass2
+![alt text](images/image-26.png)
+run the API server from ass3
+![alt text](images/image-27.png)
+run the web server
+![alt text](images/image-28.png)
+
 ![alt text](images/image-0.png)
 ![alt text](images/image.png)
 ![alt text](images/image-1.png)
