@@ -43,7 +43,14 @@ const createRecommend = async (user_id, movie_id, port, host) => {
 const addRecommend = async (user_id, movie_id, port, host) => {
     if (port == null) port = 8080;
     if (host == null) host = '127.0.0.1';
-    Userservices.addMovieWatched(user_id,movie_id);
+    const user = await User.findOne({ _id: user_id });
+    if (!user) {
+        throw new Error(`User with ID ${user_id} not found`);
+    }
+    const movieWatched = user.movies_watched || [];
+    if (!movieWatched.includes(movie_id)) {
+        await Userservices.addMovieWatched(user_id, movie_id);
+    }
     const userIntId = await getUserIntId(user_id);
     const movieIntId = await getMovieIntId(movie_id);
     var data = `PATCH ${userIntId} ${movieIntId}`;

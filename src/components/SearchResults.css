@@ -10,8 +10,9 @@
     margin-top: 0.5rem;
     overflow-y: auto;
     z-index: 1000;
-    transform: translateX(0); 
+    transform: none; 
     max-width: calc(100vw - 2rem);
+    left: auto !important;
   }
   
   .search-results-content {
