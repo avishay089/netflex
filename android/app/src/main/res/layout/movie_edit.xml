@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etMovieName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Movie Name"
+        android:hint="@string/movie_name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:layout_marginBottom="10dp"
+        android:textColorHint="@color/grey" />
+
+    <Spinner
+        android:id="@+id/spMovieCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/category"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etMovieDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Description"
+        android:hint="@string/description"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etMovieFileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="File Name"
+        android:hint="@string/video_file_name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
+
+    <EditText
+        android:id="@+id/etMovieDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="Duration"
+        android:hint="@string/duration_minutes"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
+    <EditText
+        android:id="@+id/etMovieRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="Rating"
+        android:hint="@string/rating"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColorHint="@color/grey" />
+
+</LinearLayout>
