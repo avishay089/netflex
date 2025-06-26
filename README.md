@@ -1,19 +1,19 @@
-#ass4
+There is 3 server that need to run.
 
-cd API_server 
+First the backend server:
 
+from the terminal get into the API_server folder by-
+cd API_server.
+then run-
 npm start
 
-split terminal
+then split the terminal and get into recommend_server folder by
+cd recommend_server.
+and run the recommend server ,that recommend to user which movies to watch according to his wacth list and all other users, by docker or by node.js
 
+finally, the frontend server
+split the terminal again and run-
 npm start
-
-run the recommend server from ass2
-![alt text](images/image-26.png)
-run the API server from ass3
-![alt text](images/image-27.png)
-run the web server
-![alt text](images/image-28.png)
 
 ![alt text](images/image-0.png)
 ![alt text](images/image.png)
